@@ -1,0 +1,28 @@
+IVS Projekt 2 - Plan
+
+Rozdelenie uloh
+------
+
+Matematicka kniznica - Lukas Medovic
+Testovanie / Instalator-Odinstalator - Dominik Janiga
+Mockup / GUI - Simon Ozvald
+Dokumentacia / Prirucka - Adam Durko
+
+Plan (terminy)
+-----
+
+17.3. - 27.3. 2024 : Matematicka kniznica, mockup
+27.3. - 1.4. 2024 : Testovanie a uprava matematickej kniznice
+2.4. - 14.4. 2024 : Implementacia, GUI
+14.4. - 20.4. 2024 : Instalator-Odinstalator, testovanie, prirucka
+24.4. 2024 : Finalny meeting (zhrnutie)
+
+- Dokumentacia generovana pocas vyvoja
+
+Pouzite nastroje
+-----
+
+Komunikacny kanal : Discord
+System pre spravu verzii : GitHub (email ivs.kontrola@gmail.com bol pridany ako kolaborator do rep. "ivs-project-8bit")
+Organizacia : Notion
+Pouzity programovaci jazyk : C/C++
