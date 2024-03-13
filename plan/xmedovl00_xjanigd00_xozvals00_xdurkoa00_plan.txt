@@ -25,4 +25,4 @@ Pouzite nastroje
 Komunikacny kanal : Discord
 System pre spravu verzii : GitHub (email ivs.kontrola@gmail.com bol pridany ako kolaborator do rep. "ivs-project-8bit")
 Organizacia : Notion
-Pouzity programovaci jazyk : C/C++
+Pouzite programovacie jazyky : C/C++
