@@ -1,0 +1,9 @@
+
+textview{
+    font-size: 2em;
+    padding: 20px;
+}
+
+textview#result_view {
+    font-size: 15px;
+}
