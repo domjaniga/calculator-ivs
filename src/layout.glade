@@ -64,7 +64,6 @@
     <property name="title" translatable="yes">Calculator</property>
     <property name="default-width">500</property>
     <property name="default-height">500</property>
-    <signal name="destroy" handler="exit_app" swapped="no"/>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -134,9 +133,11 @@
                     <child>
                       <object class="GtkButton" id="key1">
                         <property name="label" translatable="yes">1</property>
+                        <property name="name">n_1</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -146,9 +147,11 @@
                     <child>
                       <object class="GtkButton" id="key2">
                         <property name="label" translatable="yes">2</property>
+                        <property name="name">n_2</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -158,9 +161,11 @@
                     <child>
                       <object class="GtkButton" id="key3">
                         <property name="label" translatable="yes">3</property>
+                        <property name="name">n_3</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -170,9 +175,11 @@
                     <child>
                       <object class="GtkButton" id="key4">
                         <property name="label" translatable="yes">4</property>
+                        <property name="name">n_4</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -182,9 +189,11 @@
                     <child>
                       <object class="GtkButton" id="key5">
                         <property name="label" translatable="yes">5</property>
+                        <property name="name">n_5</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -194,9 +203,11 @@
                     <child>
                       <object class="GtkButton" id="key6">
                         <property name="label" translatable="yes">6</property>
+                        <property name="name">n_6</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -206,9 +217,11 @@
                     <child>
                       <object class="GtkButton" id="key7">
                         <property name="label" translatable="yes">7</property>
+                        <property name="name">n_7</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -218,9 +231,11 @@
                     <child>
                       <object class="GtkButton" id="key8">
                         <property name="label" translatable="yes">8</property>
+                        <property name="name">n_8</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -230,9 +245,11 @@
                     <child>
                       <object class="GtkButton" id="key9">
                         <property name="label" translatable="yes">9</property>
+                        <property name="name">n_9</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -242,9 +259,11 @@
                     <child>
                       <object class="GtkButton" id="key0">
                         <property name="label" translatable="yes">0</property>
+                        <property name="name">n_0</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -372,9 +391,11 @@
                 <child>
                   <object class="GtkButton" id="start_per_btn">
                     <property name="label" translatable="yes">(</property>
+                    <property name="name">s_(</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
@@ -384,9 +405,11 @@
                 <child>
                   <object class="GtkButton" id="end_per_btn">
                     <property name="label" translatable="yes">)</property>
+                    <property name="name">s_)</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
