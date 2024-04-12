@@ -20,4 +20,19 @@ void symbol_key_cb(GtkButton* key, gpointer data);
 */
 void append_symbol_to_input(char* symbol, size_t len, GtkTextView* textview);
 
+/**
+ * @brief Callback for the clear button (CE)
+ * @param clr_btn Button that has been clicked.
+ * @param data pointer to the input buffer
+*/
+void clear_input_cb(GtkButton* clr_btn, gpointer data);
+
+
+/**
+ * @brief Callback for evaluating the expression from the input buffer
+ * @param eval_btn Evaluate (equals) button
+ * @param buff Pointer to the buffer from which to read the expression.
+*/
+void eval_cb(GtkButton* eval_btn, gpointer buff);
+
 /*** End of input.h ***/

@@ -273,9 +273,11 @@
                     <child>
                       <object class="GtkButton" id="clear_btn">
                         <property name="label" translatable="yes">CE</property>
+                        <property name="name">AAAAAAAAAAAAAA</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="clear_input_cb" object="input_buffer" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -319,9 +321,11 @@
                 <child>
                   <object class="GtkButton" id="div_btn">
                     <property name="label" translatable="yes">/</property>
+                    <property name="name">s_/</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
@@ -331,9 +335,11 @@
                 <child>
                   <object class="GtkButton" id="mul_btn">
                     <property name="label" translatable="yes">×</property>
+                    <property name="name">s_*</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
@@ -343,9 +349,11 @@
                 <child>
                   <object class="GtkButton" id="power_btn">
                     <property name="label" translatable="yes">xᵃ</property>
+                    <property name="name">s_^</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">2</property>
@@ -355,9 +363,11 @@
                 <child>
                   <object class="GtkButton" id="sub_btn">
                     <property name="label" translatable="yes">-</property>
+                    <property name="name">s_-</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
@@ -367,9 +377,11 @@
                 <child>
                   <object class="GtkButton" id="add_btn">
                     <property name="label" translatable="yes">+</property>
+                    <property name="name">s_+</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
@@ -379,9 +391,11 @@
                 <child>
                   <object class="GtkButton" id="sqrt_btn">
                     <property name="label" translatable="yes">√</property>
+                    <property name="name">s_^(1/2)</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">2</property>
@@ -443,9 +457,11 @@
                 <child>
                   <object class="GtkButton" id="fact_btn">
                     <property name="label" translatable="yes">x!</property>
+                    <property name="name">s_!</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">2</property>
@@ -455,9 +471,11 @@
                 <child>
                   <object class="GtkButton" id="point_btn">
                     <property name="label" translatable="yes">.</property>
+                    <property name="name">s_.</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
@@ -467,9 +485,11 @@
                 <child>
                   <object class="GtkButton" id="pi_btn">
                     <property name="label" translatable="yes">𝜋</property>
+                    <property name="name">s_pi</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="symbol_key_cb" object="input_field" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
