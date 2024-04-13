@@ -7,3 +7,7 @@ textview{
 textview#result_view {
     font-size: 15px;
 }
+
+button {
+    border-radius: 15%;
+}

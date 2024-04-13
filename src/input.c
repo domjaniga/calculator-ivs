@@ -3,28 +3,27 @@
  * @authors Šimon Ožvald xozvals00
  * @brief Functions for processing user input
  * @see input.h
+ *
+ * @todo Implement input processing
 */
 #include<gtk-3.0/gtk/gtk.h>
 #include<string.h>
 #include "input.h"
 
 void symbol_key_cb(GtkButton* key, gpointer data){
-    GtkTextView* textview = (GTK_TEXT_VIEW(data));
-    const gchar* name;
-    char* symbol_str = alloca(strlen(name));
+    GtkTextView* textview = (GTK_TEXT_VIEW(data)); // Get textview
+    const gchar* name = gtk_widget_get_name(GTK_WIDGET(key));
+    char* symbol_str = alloca(strlen(name)); // String with symbol to be added to the input textview
 
-    name = gtk_widget_get_name(GTK_WIDGET(key));
-    strcpy(symbol_str, name+2);
+    strcpy(symbol_str, name+2); // Copy name without first 2 characters (key names: n_0 s_+ s_^ ...)
 
-    g_print("%s", symbol_str);
-
-    append_symbol_to_input(symbol_str, strlen(symbol_str), textview);
+    append_symbol_to_input(symbol_str, strlen(symbol_str), textview); // Add symbol to input
 
 }// symbol_key_cb()
 
 void append_symbol_to_input(char* symbol, size_t len, GtkTextView* textview){
-    GtkTextBuffer* input_buffer = gtk_text_view_get_buffer(textview);
-    gtk_text_buffer_insert_at_cursor(input_buffer, symbol, len);
+    GtkTextBuffer* input_buffer = gtk_text_view_get_buffer(textview); // Get input buffer
+    gtk_text_buffer_insert_at_cursor(input_buffer, symbol, len); // Insert symbol
 
 }// append_symbol_to_input()
 
@@ -40,5 +39,27 @@ void clear_input_cb(GtkButton* clr_btn, gpointer data){
 
 }// clear_input_cb()
 
+void eval_cb(GtkButton* eval_btn, gpointer buff){
+    GtkTextBuffer* input_buffer = GTK_TEXT_BUFFER(buff); // Get input buffer
+
+    GtkTextIter end_iter;
+    GtkTextIter start_iter;
+    gtk_text_buffer_get_end_iter(input_buffer, &end_iter);
+    gtk_text_buffer_get_start_iter(input_buffer, &start_iter); // Get text bounds
+
+    gchar* input_text = gtk_text_buffer_get_text(input_buffer, &start_iter, &end_iter, FALSE); // Get string from input buffer
+    double result = 42.0;
+
+    /** @todo process input*/
+
+    char result_str[255];
+    sprintf(result_str, "%lf", result); // Convert calculated result to a string
+
+    clear_input_cb((GtkButton*)NULL, buff); // Clear input buffer
+
+    gtk_text_buffer_get_end_iter(input_buffer, &end_iter);
+    gtk_text_buffer_insert(input_buffer, &end_iter, result_str, strlen(result_str)); // Write result to input buffer
+
+}// eval_cb()
 
 /*** End of input.c ***/
