@@ -39,8 +39,9 @@ void clear_input_cb(GtkButton* clr_btn, gpointer data){
 
 }// clear_input_cb()
 
-void eval_cb(GtkButton* eval_btn, gpointer buff){
-    GtkTextBuffer* input_buffer = GTK_TEXT_BUFFER(buff); // Get input buffer
+void eval_cb(GtkButton* eval_btn, gpointer data){
+
+    GtkTextBuffer* input_buffer = gtk_text_view_get_buffer(App.input_field); // Get input buffer
 
     GtkTextIter end_iter;
     GtkTextIter start_iter;
@@ -55,7 +56,7 @@ void eval_cb(GtkButton* eval_btn, gpointer buff){
     char result_str[255];
     sprintf(result_str, "%lf", result); // Convert calculated result to a string
 
-    clear_input_cb((GtkButton*)NULL, buff); // Clear input buffer
+    clear_input_cb((GtkButton*)NULL, input_buffer); // Clear input buffer
 
     gtk_text_buffer_get_end_iter(input_buffer, &end_iter);
     gtk_text_buffer_insert(input_buffer, &end_iter, result_str, strlen(result_str)); // Write result to input buffer

@@ -70,48 +70,60 @@
         <property name="can-focus">False</property>
         <property name="margin-start">20</property>
         <property name="margin-end">20</property>
-        <property name="margin-top">20</property>
-        <property name="margin-bottom">20</property>
+        <property name="margin-top">10</property>
+        <property name="margin-bottom">10</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkScrolledWindow" id="result_view_scroll">
+          <object class="GtkBox" id="display_box">
             <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="hscrollbar-policy">never</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
             <child>
-              <object class="GtkTextView" id="result_field">
-                <property name="name">result_view</property>
+              <object class="GtkScrolledWindow" id="result_view_scroll">
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="editable">False</property>
+                <property name="hscrollbar-policy">never</property>
+                <child>
+                  <object class="GtkTextView" id="result_field">
+                    <property name="name">result_view</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="editable">False</property>
+                    <property name="wrap-mode">word-char</property>
+                    <property name="justification">right</property>
+                    <property name="cursor-visible">False</property>
+                    <property name="buffer">result_buffer</property>
+                    <property name="accepts-tab">False</property>
+                    <property name="input-purpose">terminal</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkTextView" id="input_field">
+                <property name="name">input_view</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
                 <property name="wrap-mode">word-char</property>
                 <property name="justification">right</property>
-                <property name="cursor-visible">False</property>
-                <property name="buffer">result_buffer</property>
-                <property name="accepts-tab">False</property>
-                <property name="input-purpose">terminal</property>
+                <property name="buffer">input_buffer</property>
               </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
           </object>
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkTextView" id="input_field">
-            <property name="name">input_view</property>
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="wrap-mode">word-char</property>
-            <property name="justification">right</property>
-            <property name="buffer">input_buffer</property>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
           </packing>
         </child>
         <child>
@@ -290,7 +302,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
-                        <signal name="clicked" handler="eval_cb" object="input_buffer" swapped="no"/>
+                        <signal name="clicked" handler="eval_cb" object="display_box" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>

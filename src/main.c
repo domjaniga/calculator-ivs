@@ -2,7 +2,7 @@
  * @file main.c
  * @brief Main file for the GUI calculator
  * @author Šimon Ožvald xozvals00
- * @todo handle user input, add math lib, expand documentation, add universal button handler
+ * @todo handle user input, add math lib, expand documentation
  *
 */
 
@@ -13,36 +13,39 @@ static void activate(GApplication* app, gpointer data);
 static void load_style();
 void symbol_key_cb(GtkButton* key, gpointer textview);
 
+app_data App = {};
+
 int main(int argc, char const *argv[])
 {
-    GtkApplication* app;
-    int status;
 
-    gtk_init(&argc, (char***)&argv);
-    load_style();
+    gtk_init(&argc, (char***)&argv); // Initialize GTK
 
-    app = gtk_application_new("ivs.project.app", G_APPLICATION_DEFAULT_FLAGS);
-    g_signal_connect(G_APPLICATION(app), "activate", G_CALLBACK(activate), NULL);
+    load_style(); // Load CSS from style.css
 
-    status = g_application_run(G_APPLICATION(app), argc, (char**)argv);
-    g_object_unref(app);
+    App.app = gtk_application_new("ivs.project.app", G_APPLICATION_DEFAULT_FLAGS); // Create application
+    g_signal_connect(G_APPLICATION(App.app), "activate", G_CALLBACK(activate), NULL);
 
-    return status;
+    App.status = g_application_run(G_APPLICATION(App.app), argc, (char**)argv); // run application (calls activate() )
+    g_object_unref(App.app);
+
+    return App.status;
 
 }// main()
 
 static void activate(GApplication* app, gpointer data){
     GtkBuilder* build;
-    GObject* win;
 
     build = gtk_builder_new_from_file("layout.glade");
 
-    win = G_OBJECT(gtk_builder_get_object(build, "MainWin"));
-    g_signal_connect(win, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+    App.main_window = GTK_WINDOW(gtk_builder_get_object(build, "MainWin"));
+    g_signal_connect(App.main_window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+
+    App.input_field = GTK_TEXT_VIEW(gtk_builder_get_object(build, "input_field"));
+    App.history_field = GTK_TEXT_VIEW(gtk_builder_get_object(build, "result_field"));
 
     gtk_builder_connect_signals(build, NULL);
 
-    gtk_widget_show_all(GTK_WIDGET(win));
+    gtk_widget_show_all(GTK_WIDGET(App.main_window));
     gtk_main();
 
 }// activate()
