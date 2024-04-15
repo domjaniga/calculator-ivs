@@ -302,7 +302,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
-                        <signal name="clicked" handler="eval_cb" object="input_buffer" swapped="no"/>
+                        <signal name="clicked" handler="eval_cb" object="display_box" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>

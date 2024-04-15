@@ -42,6 +42,7 @@ void clear_input_cb(GtkButton* clr_btn, gpointer data){
 void eval_cb(GtkButton* eval_btn, gpointer data){
 
     GtkTextBuffer* input_buffer = gtk_text_view_get_buffer(App.input_field); // Get input buffer
+    GtkTextBuffer* hist_buffer = gtk_text_view_get_buffer(App.history_field); // Get history buffer
 
     GtkTextIter end_iter;
     GtkTextIter start_iter;
@@ -60,6 +61,11 @@ void eval_cb(GtkButton* eval_btn, gpointer data){
 
     gtk_text_buffer_get_end_iter(input_buffer, &end_iter);
     gtk_text_buffer_insert(input_buffer, &end_iter, result_str, strlen(result_str)); // Write result to input buffer
+
+    sprintf(result_str, "%s = %lf\n", input_text, result); // Create history entry
+
+    gtk_text_buffer_get_end_iter(hist_buffer, &end_iter);
+    gtk_text_buffer_insert(hist_buffer, &end_iter, result_str, strlen(result_str)); // Write an entry to the history buffer
 
 }// eval_cb()
 

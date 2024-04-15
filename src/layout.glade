@@ -55,10 +55,7 @@
       </object>
     </child>
   </object>
-  <object class="GtkTextBuffer" id="result_buffer">
-    <property name="text" translatable="yes">((1+2)*(4/3))^(0.5) = 2
-5! = 120</property>
-  </object>
+  <object class="GtkTextBuffer" id="result_buffer"/>
   <object class="GtkWindow" id="MainWin">
     <property name="can-focus">False</property>
     <property name="title" translatable="yes">Calculator</property>
