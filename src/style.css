@@ -11,3 +11,8 @@ textview#result_view {
 button {
     border-radius: 15%;
 }
+
+.warninglabel {
+    color: red;
+    padding: 5px;
+}

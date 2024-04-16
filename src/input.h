@@ -1,21 +1,35 @@
-
-typedef struct app_data_s
-{
-    GtkApplication*     app;
-    GtkWindow*          main_window;
-    GtkTextView*        input_field;
-    GtkTextView*        history_field;
-    int status;
-} app_data;
-
-extern app_data App;
-
 /**
  * @file input.h
  * @authors Šimon Ožvald xozvals00
  * @brief Function declarations for processing user input
  * @see input.h
 */
+
+/**
+ * @struct app_data_s
+ * @brief Struct containing application info and pointers to the main widgets
+*/
+typedef struct app_data_s
+{
+    GtkApplication*     app;
+    GtkWindow*          main_window;
+    GtkTextView*        input_field;
+    GtkTextView*        history_field;
+    GtkLabel*           warning_label;
+    int status;
+} app_data;
+
+extern app_data App;
+
+
+/**
+ * @enum warnings
+ * @brief Warning codes for the set_warning function.
+*/
+enum warnings{
+    INVALID_INPUT_WARN,
+    MISSING_CSS_WARN
+};
 
 /**
  * @fn symbol_key_cb(GtkButton* key, gpointer data)
@@ -50,5 +64,18 @@ void clear_input_cb(GtkButton* clr_btn, gpointer data);
  * @param buff Pointer to the buffer from which to read the expression.
 */
 void eval_cb(GtkButton* eval_btn, gpointer data);
+
+/**
+ * @fn void clear_warning(void)
+ * @brief Clears the warning label.
+*/
+void clear_warning(void);
+
+/**
+ * @fn void set_warning(int code)
+ * @brief Sets the warning label according to the warning code.
+ * @param code Code of the warning to be displayed
+*/
+void set_warning(int code);
 
 /*** End of input.h ***/

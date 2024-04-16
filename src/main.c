@@ -42,6 +42,7 @@ static void activate(GApplication* app, gpointer data){
 
     App.input_field = GTK_TEXT_VIEW(gtk_builder_get_object(build, "input_field"));
     App.history_field = GTK_TEXT_VIEW(gtk_builder_get_object(build, "result_field"));
+    App.warning_label = GTK_LABEL(gtk_builder_get_object(build, "warning_label"));
 
     gtk_builder_connect_signals(build, NULL);
 
@@ -59,7 +60,7 @@ static void load_style(){
     gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
     gtk_css_provider_load_from_path(css_provider, "style.css", &err);
 
-    if(err != NULL) g_printerr("Failed to load CSS!");
+    if(err != NULL) set_warning(MISSING_CSS_WARN);
 
     g_object_unref(css_provider);
 
