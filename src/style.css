@@ -1,7 +1,13 @@
-
 textview{
     font-size: 2em;
     padding: 20px;
+}
+
+.box#display_box {
+    border-color: white;
+    border-style: solid;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 textview#result_view {
@@ -10,6 +16,7 @@ textview#result_view {
 
 button {
     border-radius: 15%;
+    margin: 2px;
 }
 
 .warninglabel {

@@ -72,6 +72,7 @@
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkBox" id="display_box">
+            <property name="name">display_box</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="orientation">vertical</property>
