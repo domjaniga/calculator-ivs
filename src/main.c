@@ -35,7 +35,7 @@ int main(int argc, char const *argv[])
 static void activate(GApplication* app, gpointer data){
     GtkBuilder* build;
 
-    build = gtk_builder_new_from_file("layout.glade");
+    build = gtk_builder_new_from_file("assets/layout.glade");
 
     App.main_window = GTK_WINDOW(gtk_builder_get_object(build, "MainWin"));
     g_signal_connect(App.main_window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
@@ -58,7 +58,7 @@ static void load_style(){
     GError* err = NULL;
 
     gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-    gtk_css_provider_load_from_path(css_provider, "style.css", &err);
+    gtk_css_provider_load_from_path(css_provider, "assets/style.css", &err);
 
     if(err != NULL) set_warning(MISSING_CSS_WARN);
 
