@@ -81,23 +81,23 @@ void eval_cb(GtkButton* eval_btn, gpointer data){
 }// eval_cb()
 
 void set_warning(int code){
-    switch (code)
+    switch (code) // code determines which warning to show
     {
     case MISSING_CSS_WARN:
-        gtk_label_set_text(App.warning_label, "Failed to load CSS");
+        gtk_label_set_text(App.warning_label, "Failed to load CSS"); // Displayed if the app failed to load style from style.css
         break;
 
     case INVALID_INPUT_WARN:
-        gtk_label_set_text(App.warning_label, "Invalid Input");
+        gtk_label_set_text(App.warning_label, "Invalid Input"); // Displayed if the expression in input cannot be calculated
         break;
 
     default:
         break;
     }
-}
+}// set_warning()
 
 void clear_warning(void){
     gtk_label_set_text(App.warning_label, "");
-}
+}// clear_warning()
 
 /*** End of input.c ***/

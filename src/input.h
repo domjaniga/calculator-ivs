@@ -5,17 +5,20 @@
  * @see input.h
 */
 
+#ifndef INPUT_H
+#define INPUT_H
+
 /**
  * @struct app_data_s
  * @brief Struct containing application info and pointers to the main widgets
 */
 typedef struct app_data_s
 {
-    GtkApplication*     app;
-    GtkWindow*          main_window;
-    GtkTextView*        input_field;
-    GtkTextView*        history_field;
-    GtkLabel*           warning_label;
+    GtkApplication*     app;            ///< Gtk application
+    GtkWindow*          main_window;    ///< Main window of the calculator
+    GtkTextView*        input_field;    ///< Textview for input
+    GtkTextView*        history_field;  ///< Textview displaying history
+    GtkLabel*           warning_label;  ///< Warning label
     int status;
 } app_data;
 
@@ -78,4 +81,6 @@ void clear_warning(void);
 */
 void set_warning(int code);
 
+
+#endif
 /*** End of input.h ***/
