@@ -120,6 +120,4 @@ void clear_warning(void){
     gtk_label_set_text(App.warning_label, "");
 }// clear_warning()
 
-
-
 /*** End of input.c ***/
