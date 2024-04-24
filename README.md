@@ -1,6 +1,9 @@
 # ivs-project-8bit
 Prostredi
 ---------
+Debian 64bit
+
+Ubuntu 64bit
 
 Autori
 ------
@@ -11,7 +14,6 @@ Autori
 - xozvals00 Šimon Ožvald
 - xjanigd00 Dominik Janiga
 
-Licence
+Licence - https://www.gnu.org/licenses/gpl-3.0
 -------
-
-Tento program je poskytovan...
+Tento program je poskytovan - GNU GENERAL PUBLIC LICENSE - 3.0
