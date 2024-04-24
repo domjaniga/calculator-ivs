@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -g $(shell pkg-config --cflags gtk+-3.0)
-LDFLAGS = $(shell pkg-config --libs gtk+-3.0)
+CFLAGS = -Wall -g $(shell pkg-config --cflags gtk+-3.0) -lm
+LDFLAGS = $(shell pkg-config --libs gtk+-3.0) -lm
 
 # Seznam zdrojových souborů
 SRC = $(wildcard *.c)

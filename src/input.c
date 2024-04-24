@@ -49,7 +49,6 @@ void clear_input_cb(GtkButton* clr_btn, gpointer data){
 double evaluate_expression(char* expr, int* err) {
     double result = te_interp(expr, err);
     if (*err != 0) {
-        fprintf(stderr, "Error evaluating expression at position %d\n", err);
         return NAN; // Not-a-Number to indicate error
     }
     return result;

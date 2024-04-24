@@ -22,7 +22,7 @@ int main(int argc, char const *argv[])
 
     load_style(); // Load CSS from style.css
 
-    App.app = gtk_application_new("ivs.project.app", G_APPLICATION_FLAGS_NONE); // Create application
+    App.app = gtk_application_new("ivs.project.app", 0); // Create application
     g_signal_connect(G_APPLICATION(App.app), "activate", G_CALLBACK(activate), NULL);
 
     App.status = g_application_run(G_APPLICATION(App.app), argc, (char**)argv); // run application (calls activate() )
