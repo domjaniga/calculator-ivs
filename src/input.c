@@ -43,55 +43,6 @@ void clear_input_cb(GtkButton* clr_btn, gpointer data){
 
 }// clear_input_cb()
 
-#include "tinyexpr.h"
-#include "library.h"
-
-static double wrap_add(double x, double y) { return add(x, y); }
-static double wrap_subtract(double x, double y) { return subtract(x, y); }
-static double wrap_multiply(double x, double y) { return multiply(x, y); }
-static double wrap_divide(double x, double y) { return divide(x, y); }
-static double wrap_power(double x, double y) { return power(x, y); }
-static double wrap_square_root(double x) { return square_root(x); }
-static double wrap_sin_deg(double x) { return sin_deg(x); }
-static double wrap_cos_deg(double x) { return cos_deg(x); }
-static double wrap_tan_deg(double x) { return tan_deg(x); }
-
-void init_custom_functions() {
-    te_variable funcs[] = {
-            {"add", wrap_add, TE_FUNCTION2},
-            {"subtract", wrap_subtract, TE_FUNCTION2},
-            {"multiply", wrap_multiply, TE_FUNCTION2},
-            {"divide", wrap_divide, TE_FUNCTION2},
-            {"power", wrap_power, TE_FUNCTION2},
-            {"sqrt", wrap_square_root, TE_FUNCTION1},
-            {"sin_deg", wrap_sin_deg, TE_FUNCTION1},
-            {"cos_deg", wrap_cos_deg, TE_FUNCTION1},
-            {"tan_deg", wrap_tan_deg, TE_FUNCTION1},
-            {"arc_sin", wrap_arc_sin, TE_FUNCTION1},
-            {"arc_cos", wrap_arc_cos, TE_FUNCTION1},
-            {"arc_tan", wrap_arc_tan, TE_FUNCTION1},
-    };
-
-    int num_funcs = sizeof(funcs) / sizeof(te_variable);
-    for (int i = 0; i < num_funcs; i++) {
-        te_variable def = funcs[i];
-        te_register_function(def.name, def.address, def.type);
-    }
-}
-
-double evaluate_expression(const char* expr) {
-    init_custom_functions();
-
-    int err;
-    double result = te_interp(expr, &err);
-    if (err != 0) {
-        fprintf(stderr, "Error evaluating expression: %s\n", te_error_string(err));
-        return NAN;
-    }
-    return result;
-}
-
-
 void eval_cb(GtkButton* eval_btn, gpointer data){
 
     GtkTextBuffer* input_buffer = gtk_text_view_get_buffer(App.input_field); // Get input buffer
@@ -148,7 +99,5 @@ void set_warning(int code){
 void clear_warning(void){
     gtk_label_set_text(App.warning_label, "");
 }// clear_warning()
-
-
 
 /*** End of input.c ***/
