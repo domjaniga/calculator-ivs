@@ -1,6 +1,8 @@
 # ivs-project-8bit
 Prostredi
 ---------
+Debian 64bit
+Ubuntu 64bit
 
 Autori
 ------
