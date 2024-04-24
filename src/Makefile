@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=`pkg-config --cflags --libs gtk+-3.0` -lm -rdynamic
+CFLAGS= -lm -rdynamic
 
 all: ${wildcard ./*.c}
-	${CC} ${CFLAGS} ${wildcard ./*.c} -o main
+	${CC} ${CFLAGS} $(shell pkg-config --cflags gtk+-3.0) ${wildcard ./*.c} -o main $(shell pkg-config --libs gtk+-3.0)

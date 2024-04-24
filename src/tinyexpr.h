@@ -31,6 +31,7 @@
 extern "C" {
 #endif
 
+void te_register_function(const char *name, const void *func, int type);
 
 
 typedef struct te_expr {
