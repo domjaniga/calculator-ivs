@@ -69,10 +69,10 @@ void eval_cb(GtkButton* eval_btn, gpointer data){
     gtk_text_buffer_get_start_iter(input_buffer, &start_iter); // Get text bounds
 
     gchar* input_text = gtk_text_buffer_get_text(input_buffer, &start_iter, &end_iter, FALSE); // Get string from input buffer
-    printf("%u\n", input_text[strlen(input_text)]);
+
     char* expr = alloca(strlen(input_text));
     strcpy(expr, input_text);
-    printf("%s\n", expr);
+
     double result = 42.0;
     int error = 0;
 
