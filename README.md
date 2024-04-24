@@ -16,4 +16,4 @@ Autori
 
 Licence - https://www.gnu.org/licenses/gpl-3.0
 -------
-Tento program je poskytovan - GNU General Public License
+Tento program je poskytovan - GNU GENERAL PUBLIC LICENSE - 3.0
