@@ -415,9 +415,9 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="sqrt_btn">
+                  <object class="GtkButton" id="rt_btn">
                     <property name="label" translatable="yes">√</property>
-                    <property name="name">s_^(1/2)</property>
+                    <property name="name">s_√</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
