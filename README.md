@@ -16,5 +16,5 @@ Autori
 
 Licence
 -------
-
+https://www.gnu.org/licenses/gpl-3.0
 Tento program je poskytovan...
