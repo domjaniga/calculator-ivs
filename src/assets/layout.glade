@@ -8,50 +8,22 @@
     <property name="can-focus">False</property>
     <child>
       <object class="GtkMenuItem" id="sin_btn">
+        <property name="name">f_sin(</property>
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="label" translatable="yes">sin()</property>
         <property name="use-underline">True</property>
+        <signal name="activate" handler="symbol_key_cb" object="input_field" swapped="no"/>
       </object>
     </child>
     <child>
       <object class="GtkMenuItem" id="cos_btn">
+        <property name="name">f_cos(</property>
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="label" translatable="yes">cos()</property>
         <property name="use-underline">True</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkMenuItem" id="tg_btn">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="label" translatable="yes">tg()</property>
-        <property name="use-underline">True</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkMenuItem" id="asin_btn">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="label" translatable="yes">arcsin()</property>
-        <property name="use-underline">True</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkMenuItem" id="acos_btn()">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="label" translatable="yes">arccos()</property>
-        <property name="use-underline">True</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkMenuItem" id="atg_btn">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="label" translatable="yes">arctg()</property>
-        <property name="use-underline">True</property>
+        <signal name="activate" handler="symbol_key_cb" object="input_field" swapped="no"/>
       </object>
     </child>
   </object>
@@ -417,7 +389,7 @@
                 <child>
                   <object class="GtkButton" id="rt_btn">
                     <property name="label" translatable="yes">√</property>
-                    <property name="name">s_√</property>
+                    <property name="name">s_^(1/</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
@@ -483,7 +455,7 @@
                 <child>
                   <object class="GtkButton" id="fact_btn">
                     <property name="label" translatable="yes">x!</property>
-                    <property name="name">s_!</property>
+                    <property name="name">s_fac(</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>

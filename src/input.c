@@ -9,9 +9,9 @@
 #include <gtk-3.0/gtk/gtk.h>
 #include <string.h>
 #include "input.h"
-#include "tinyexpr.h"
 #include "library.h"
 #include <math.h>
+#include "tinyexpr.h"
 
 void symbol_key_cb(GtkButton* key, gpointer data){
     GtkTextView* textview = (GTK_TEXT_VIEW(data)); // Get textview
@@ -46,9 +46,9 @@ void clear_input_cb(GtkButton* clr_btn, gpointer data){
 
 }// clear_input_cb()
 
-double evaluate_expression(const char* expr, int* err) {
+double evaluate_expression(char* expr, int* err) {
     double result = te_interp(expr, err);
-    if (err != 0) {
+    if (*err != 0) {
         fprintf(stderr, "Error evaluating expression at position %d\n", err);
         return NAN; // Not-a-Number to indicate error
     }
@@ -72,9 +72,9 @@ void eval_cb(GtkButton* eval_btn, gpointer data){
     printf("%u\n", input_text[strlen(input_text)]);
     char* expr = alloca(strlen(input_text));
     strcpy(expr, input_text);
-    printf("%s", expr);
+    printf("%s\n", expr);
     double result = 42.0;
-    int error;
+    int error = 0;
 
     result = evaluate_expression(expr, &error);
 

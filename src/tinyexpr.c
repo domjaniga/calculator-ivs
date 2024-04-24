@@ -131,14 +131,16 @@ void te_free(te_expr *n) {
 
 static const te_variable functions[] = {
         {"add", lib_add, TE_FUNCTION2 | TE_FLAG_PURE, 0},
-        {"subtract", lib_subtract, TE_FUNCTION2 | TE_FLAG_PURE, 0},
-        {"multiply", lib_multiply, TE_FUNCTION2 | TE_FLAG_PURE, 0},
+        {"cos", lib_cos_deg, TE_FUNCTION1 | TE_FLAG_PURE, 0},
         {"divide", lib_divide, TE_FUNCTION2 | TE_FLAG_PURE, 0},
-        {"sqrt", lib_square_root, TE_FUNCTION1 | TE_FLAG_PURE, 0},
+        {"fac", lib_factorial, TE_FUNCTION1 | TE_FLAG_PURE, 0},
+        {"multiply", lib_multiply, TE_FUNCTION2 | TE_FLAG_PURE, 0},
         {"pow", lib_power, TE_FUNCTION2 | TE_FLAG_PURE, 0},
         {"sin", lib_sin_deg, TE_FUNCTION1, 0},
-        {"cos", lib_cos_deg, TE_FUNCTION1 | TE_FLAG_PURE, 0},
+        {"sqrt", lib_square_root, TE_FUNCTION1 | TE_FLAG_PURE, 0},
+        {"subtract", lib_subtract, TE_FUNCTION2 | TE_FLAG_PURE, 0},
         {"tan", lib_tan_deg, TE_FUNCTION1 | TE_FLAG_PURE, 0},
+        
         // Additional mathematical functions you might need
         {0, 0, 0, 0} // End of array
 };
