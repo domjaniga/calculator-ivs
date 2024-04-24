@@ -1,80 +1,76 @@
 #include "library.h"
 #include <math.h>
 
-double add(double x, double y) {
+
+const double PI = 3.14159265358979323846;
+
+
+double lib_add(double x, double y) {
     return x + y;
 }
 
-double subtract(double x, double y) {
+double lib_subtract(double x, double y) {
     return x - y;
 }
 
-double multiply(double x, double y) {
+double lib_multiply(double x, double y) {
     return x * y;
 }
 
-double divide(double x, double y) {
+double lib_divide(double x, double y) {
     if (y != 0) {
         return x / y;
     } else {
-        // Ak je to nulou
         return INFINITY;
     }
 }
 
-double square_root(double x) {
+double lib_square_root(double x) {
     if (x >= 0) {
         return sqrt(x);
     } else {
-        // Ak je odmocnina nulou
         return NAN;
     }
 }
 
-double power(double x, double y) {
+double lib_power(double x, double y) {
     return pow(x, y);
 }
 
-int factorial(int x) {
+int lib_factorial(int x) {
     if (x < 0) {
-        // Ak je faktorial negativne cislo
         return -1;
     }
     int result = 1;
-    while (x > 1) {
-        result *= x;
-        x--;
+    for (int i = 2; i <= x; i++) {
+        result *= i;
     }
     return result;
 }
 
-double sin_deg(double x) {
-    // Konvertovanie stupnov na radiany
+double lib_sin_deg(double x) {
     double rad = x * PI / 180.0;
     return sin(rad);
 }
 
-double cos_deg(double x) {
-    // Konvertovanie stupnov na radiany
+double lib_cos_deg(double x) {
     double rad = x * PI / 180.0;
     return cos(rad);
 }
 
-double tan_deg(double x) {
-    // Konvertovanie stupnov na radiany
+double lib_tan_deg(double x) {
     double rad = x * PI / 180.0;
     return tan(rad);
 }
 
-double arcsin(double x) {
+double lib_arcsin(double x) {
     return asin(x);
 }
 
-double arccos(double x) {
+double lib_arccos(double x) {
     return acos(x);
 }
 
-double arctan(double x) {
+double lib_arctan(double x) {
     return atan(x);
 }
-
