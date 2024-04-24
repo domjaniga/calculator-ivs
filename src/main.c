@@ -35,19 +35,20 @@ int main(int argc, char const *argv[])
 static void activate(GApplication* app, gpointer data){
     GtkBuilder* build;
 
-    build = gtk_builder_new_from_file("assets/layout.glade");
+    build = gtk_builder_new_from_file("assets/layout.glade"); // Load app layout
 
-    App.main_window = GTK_WINDOW(gtk_builder_get_object(build, "MainWin"));
+    App.main_window = GTK_WINDOW(gtk_builder_get_object(build, "MainWin")); // Get main window
     g_signal_connect(App.main_window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
 
+    // Get main I/O widgets
     App.input_field = GTK_TEXT_VIEW(gtk_builder_get_object(build, "input_field"));
     App.history_field = GTK_TEXT_VIEW(gtk_builder_get_object(build, "result_field"));
     App.warning_label = GTK_LABEL(gtk_builder_get_object(build, "warning_label"));
 
-    gtk_builder_connect_signals(build, NULL);
+    gtk_builder_connect_signals(build, NULL); // Connect signals from builder
 
-    gtk_widget_show_all(GTK_WIDGET(App.main_window));
-    gtk_main();
+    gtk_widget_show_all(GTK_WIDGET(App.main_window)); // Show main window
+    gtk_main(); // Main loop
 
 }// activate()
 
@@ -58,9 +59,9 @@ static void load_style(){
     GError* err = NULL;
 
     gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-    gtk_css_provider_load_from_path(css_provider, "assets/style.css", &err);
+    gtk_css_provider_load_from_path(css_provider, "assets/style.css", &err); // Load style from style.css
 
-    if(err != NULL) set_warning(MISSING_CSS_WARN);
+    if(err != NULL) set_warning(MISSING_CSS_WARN); // Display warning on error
 
     g_object_unref(css_provider);
 

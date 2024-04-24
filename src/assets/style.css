@@ -20,6 +20,11 @@ button {
 }
 
 .warninglabel {
-    color: red;
+    color:tomato;
     padding: 5px;
+}
+
+button#result_btn {
+    background-color:cornflowerblue;
+    color: white;
 }

@@ -312,6 +312,7 @@
                     <child>
                       <object class="GtkButton" id="result_btn">
                         <property name="label" translatable="yes">=</property>
+                        <property name="name">result_btn</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
