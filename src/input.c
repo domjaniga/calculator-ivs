@@ -1,6 +1,6 @@
 /**
  * @file input.c
- * @authors Šimon Ožvald xozvals00
+ * @authors Šimon Ožvald xozvals00, Lukáš Medovič xmedovl00
  * @brief Functions for processing user input
  * @see input.h
  *
@@ -9,6 +9,9 @@
 #include<gtk-3.0/gtk/gtk.h>
 #include<string.h>
 #include "input.h"
+#include "tinyexpr.h"
+#include "library.h"
+#include <math.h>
 
 void symbol_key_cb(GtkButton* key, gpointer data){
     GtkTextView* textview = (GTK_TEXT_VIEW(data)); // Get textview
@@ -43,18 +46,15 @@ void clear_input_cb(GtkButton* clr_btn, gpointer data){
 
 }// clear_input_cb()
 
-#include "tinyexpr.h"
-#include "library.h"
-
 static double wrap_add(double x, double y) { return add(x, y); }
 static double wrap_subtract(double x, double y) { return subtract(x, y); }
 static double wrap_multiply(double x, double y) { return multiply(x, y); }
 static double wrap_divide(double x, double y) { return divide(x, y); }
 static double wrap_power(double x, double y) { return power(x, y); }
 static double wrap_square_root(double x) { return square_root(x); }
-static double wrap_sin_deg(double x) { return sin_deg(x); }
-static double wrap_cos_deg(double x) { return cos_deg(x); }
-static double wrap_tan_deg(double x) { return tan_deg(x); }
+static double wrap_sin_deg(double x) { return sin(x); }
+static double wrap_cos_deg(double x) { return cos(x); }
+static double wrap_tan_deg(double x) { return tan(x); }
 
 void init_custom_functions() {
     te_variable funcs[] = {
@@ -67,9 +67,6 @@ void init_custom_functions() {
             {"sin_deg", wrap_sin_deg, TE_FUNCTION1},
             {"cos_deg", wrap_cos_deg, TE_FUNCTION1},
             {"tan_deg", wrap_tan_deg, TE_FUNCTION1},
-            {"arc_sin", wrap_arc_sin, TE_FUNCTION1},
-            {"arc_cos", wrap_arc_cos, TE_FUNCTION1},
-            {"arc_tan", wrap_arc_tan, TE_FUNCTION1},
     };
 
     int num_funcs = sizeof(funcs) / sizeof(te_variable);
@@ -107,7 +104,7 @@ void eval_cb(GtkButton* eval_btn, gpointer data){
     gchar* input_text = gtk_text_buffer_get_text(input_buffer, &start_iter, &end_iter, FALSE); // Get string from input buffer
     double result = 42.0;
 
-    /** @todo process input*/
+    evaluate_expression(input_text);
 
     if(!strcmp(input_text, "1/0")){
         set_warning(INVALID_INPUT_WARN);
