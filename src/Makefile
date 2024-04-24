@@ -16,7 +16,7 @@ all: $(EXEC) doc
 
 # Linkování objektových souborů do spustitelného souboru
 $(EXEC): $(OBJ)
-	$(CC) $(LDFLAGS) $^ -o $@
+	$(CC) $^ -o $@ $(LDFLAGS)
 
 # Kompilace zdrojových souborů do objektových souborů
 %.o: %.c
