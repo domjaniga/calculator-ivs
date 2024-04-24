@@ -468,8 +468,8 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="point_btn">
-                    <property name="label" translatable="yes">.</property>
-                    <property name="name">s_.</property>
+                    <property name="label" translatable="yes">,</property>
+                    <property name="name">s_,</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
@@ -483,7 +483,7 @@
                 <child>
                   <object class="GtkButton" id="pi_btn">
                     <property name="label" translatable="yes">𝜋</property>
-                    <property name="name">s_pi</property>
+                    <property name="name">s_3,14159</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>

@@ -37,11 +37,14 @@ double lib_power(double x, double y) {
     return pow(x, y);
 }
 
-int lib_factorial(int x) {
-    if (x < 0) {
+double lib_factorial(double x) {
+    int n = x;
+    n -= x;
+
+    if (x < 0 && n != 0) {
         return -1;
     }
-    int result = 1;
+    double result = 1;
     for (int i = 2; i <= x; i++) {
         result *= i;
     }

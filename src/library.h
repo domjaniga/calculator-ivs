@@ -11,7 +11,7 @@ double lib_multiply(double x, double y);
 double lib_divide(double x, double y);
 double lib_square_root(double x);
 double lib_power(double x, double y);
-int lib_factorial(int x);
+double lib_factorial(double x);
 double lib_sin_deg(double x);
 double lib_cos_deg(double x);
 double lib_tan_deg(double x);
