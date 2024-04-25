@@ -3,6 +3,8 @@ Prostredi
 ---------
 Debian 64bit
 
+Ubuntu 64bit
+
 Autori
 ------
 
