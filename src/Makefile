@@ -4,7 +4,7 @@ LDFLAGS = $(shell pkg-config --libs gtk+-3.0) -lm -rdynamic
 
 # Seznam zdrojových souborů
 SRC = $(wildcard *.c)
-# Exclude profiling.c from the main application build
+# Vyloučeni profiling.c z hlavního sestavení aplikace
 MAIN_SRC = $(filter-out profiling.c, $(SRC))
 # Vytvoření seznamu objektových souborů ze zdrojových souborů
 OBJ = $(MAIN_SRC:.c=.o)
