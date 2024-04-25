@@ -1,0 +1,9 @@
+Na začiatku sme si vytýčili ambiciózny projektový plán, ale postupne sme narazili na nečakané komplikácie. Analýza požiadaviek a návrh softvérovej architektúry si vyžiadali viac času, než sme očakávali, kvôli zložitosti úloh, ktoré sme riešili. Po dokončení návrhu sme sa pustili do vývoja prototypu našej aplikácie, sústrediac sa hlavne na základné funkcionality.
+
+Koordinácia práce medzi členmi tímu bola náročnejšia, keď sme integrovali rôzne moduly do jedného celku. Na komunikáciu sme využívali Discord a na organizáciu úloh Messenger, čo nám pomáhalo udržať poriadok a prehľad o tom, kde sa nachádzame v procese.
+
+Pri implementácii užívateľského rozhrania sme narazili na technické problémy, ktoré sme museli intenzívne riešiť. Po niekoľkých kolech revízií a úprav kódu sme našli efektívne riešenie, ktoré fungovalo.
+
+Záverečná fáza projektu zahŕňala dôkladné testovanie systému, čo nám umožnilo odhaliť a opraviť posledné chyby. Pravidelné aktualizácie dokumentácie a kódu boli nevyhnutné na to, aby všetko fungovalo ako má.
+
+Aj keď sme začali s veľkými očakávaniami a narazili na niekoľko prekážok, naša schopnosť pružne reagovať a prispôsobiť sa nečakaným zmenám nám umožnila dokončiť projekt v poslednej chvíli, tesne pred stanoveným termínom.
