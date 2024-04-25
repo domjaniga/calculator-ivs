@@ -1,4 +1,4 @@
-xmedovl00 Lukáš Medovič - 100
-xdurkoa00 Adam Ďurko - 100
-xozvals00 Šimon Ožvald - 100
-xjanigd00 Dominik Janiga - 100
+xmedovl00 Lukáš Medovič - 100 (základné mat. operácie, mat. knižnica)
+xdurkoa00 Adam Ďurko - 100 (dokumentácia, Makefile)
+xozvals00 Šimon Ožvald - 100 (GUI, Mockup, pokročilé mat. operácie)
+xjanigd00 Dominik Janiga - 100 (testy, inštalátory)
